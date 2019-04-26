@@ -11,17 +11,17 @@ class App extends Component {
     return (
       <div className="App">
         <Nav>
-          <NavLink to="/public" component={Public}>
+          <NavLink to="/public"п>
             Public
           </NavLink>
-          <NavLink to="/private" component={Private}>
+          <NavLink to="/private">
             Private
           </NavLink>
         </Nav>
         <Switch>
           <Route path="/public" component={Public} />
           <Route path="/login" component={Login} />
-          <Route path="/private" component={Private}/>
+          <Route path="/private" component={Private} />
           <Redirect to="/public"/>
         </Switch>
 
