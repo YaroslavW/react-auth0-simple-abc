@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav>
-          <NavLink to="/public"п>
+          <NavLink to="/public">
             Public
           </NavLink>
           <NavLink to="/private">
