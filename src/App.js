@@ -4,12 +4,14 @@ import Private from './Components/Private';
 import Login from './Components/Login';
 import {Nav, NavLink} from './Components/Navigation';
 import { Route, Redirect, Switch } from 'react-router-dom';
+import { AuthProvider } from './Components/Auth';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <AuthProvider>
+        <div className="App">
         <Nav>
           <NavLink to="/public">
             Public
@@ -24,8 +26,8 @@ class App extends Component {
           <Route path="/private" component={Private} />
           <Redirect to="/public"/>
         </Switch>
-
-      </div>
+        </div>
+      </AuthProvider>
     );
   }
 }
