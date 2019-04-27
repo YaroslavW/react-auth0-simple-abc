@@ -5,6 +5,7 @@ import Login from './Components/Login';
 import {Nav, NavLink} from './Components/Navigation';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { AuthProvider } from './Components/Auth';
+import { PrivateRoute } from './Components/PrivateRoute';
 import './App.css';
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
         <Switch>
           <Route path="/public" component={Public} />
           <Route path="/login" component={Login} />
-          <Route path="/private" component={Private} />
+          <PrivateRoute path="/private" component={Private} />
           <Redirect to="/public"/>
         </Switch>
         </div>
