@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 
 const { Provider, Consumer: AuthConsumer } = React.createContext({isAuthorized: false});
 
@@ -7,7 +8,9 @@ class AuthProvider extends Component {
     isAuthorized: false
   }
   authorize = () => {
-    this.setState({ isAuthorized: true })
+    this.setState({ isAuthorized: true }, () => {
+      this.props.history.push('/private')
+    })
   }
   render(){
     const { isAuthorized } = this.state;
@@ -31,4 +34,5 @@ export function withAuth(WrappedComponent){
     }
   }
 }
-export { AuthProvider };
+const AuthProviderWithRouter = withRouter(AuthProvider)
+export { AuthProviderWithRouter as AuthProvider };
